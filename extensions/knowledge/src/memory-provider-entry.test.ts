@@ -63,6 +63,16 @@ it("entry retains native tools, denies untrusted provider callers and prompt hon
   expect(prompt(tools.slice(0, 2))).toMatch(/Do not save progress toward an outcome/);
   expect(prompt(tools.slice(0, 2))).toMatch(/Prefer what the user said over what you observed/);
   expect(prompt(tools.slice(0, 2))).not.toMatch(/project-state changes/);
+  // The capture rule applies to page edits even without knowledge_remember.
+  const pageOnly = prompt([
+    "knowledge_grep",
+    "knowledge_record",
+    "knowledge_save_page",
+    "knowledge_status",
+    "knowledge_ontology",
+  ]);
+  expect(pageOnly).toMatch(/Do not save progress toward an outcome/);
+  expect(pageOnly).not.toMatch(/knowledge_remember/);
   // Writes are on by default, so the provider owns the pre-compaction flush.
   expect(capability!.providerFlushPlanResolver({}).persistenceToolNames).toStrictEqual([
     "knowledge_remember",

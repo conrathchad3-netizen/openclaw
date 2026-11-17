@@ -78,7 +78,8 @@ agent to:
   a fresh `requestId` and the claims in `items`. The user's own words come
   before the agent's observations, which are saved only when they are a final
   outcome. Progress toward an outcome (steps taken, intermediate results,
-  pending states, "as of" snapshots) is not saved;
+  routine waiting, "as of" snapshots) is not saved, as claims or page content;
+  constraints and blockers the user states still are;
 - keep a page for work that spans turns or that the user will return to, and
   for each person, organization or project the user treats as significant:
   reuse the page recall found or create it right away through
@@ -87,7 +88,7 @@ agent to:
   where the subject stands, such as a milestone, a new or cleared blocker or a
   changed plan, the agent rewrites that State in place before its final reply;
   steps toward an outcome leave it alone), and record the agent's own
-  findings there as analysis rather than in `knowledge_remember`, which never
+  conclusions there as analysis rather than in `knowledge_remember`, which never
   stores agent inference;
 - record replacements and contradictions with knowledge-correct instead of
   parallel claims;
