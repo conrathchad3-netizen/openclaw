@@ -56,9 +56,13 @@ it("entry retains native tools, denies untrusted provider callers and prompt hon
   const tools = ["knowledge_grep", "knowledge_remember", "knowledge_record", "knowledge_save_page"];
   const prompt = (t: string[]) =>
     capability!.promptBuilder({ availableTools: new Set(t) }).join("\n");
-  const stateRule = /alters what an existing page's State says, also rewrite that State/;
+  const stateRule = /changes where the subject stands .*rewrite that State in place/;
   expect(prompt(tools.slice(0, 2))).not.toMatch(stateRule);
   expect(prompt([...tools, "knowledge_status", "knowledge_ontology"])).toMatch(stateRule);
+  // Saving targets outcomes and the user's words, never progress toward an outcome.
+  expect(prompt(tools.slice(0, 2))).toMatch(/Do not save progress toward an outcome/);
+  expect(prompt(tools.slice(0, 2))).toMatch(/Prefer what the user said over what you observed/);
+  expect(prompt(tools.slice(0, 2))).not.toMatch(/project-state changes/);
   // Writes are on by default, so the provider owns the pre-compaction flush.
   expect(capability!.providerFlushPlanResolver({}).persistenceToolNames).toStrictEqual([
     "knowledge_remember",
