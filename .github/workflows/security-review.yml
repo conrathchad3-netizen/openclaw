@@ -1,6 +1,6 @@
-name: Security Review
+name: Security-Review.yml
 
-on:
+on:workflow runs
   pull_request_target: # zizmor: ignore[dangerous-triggers] executes trusted workflow scripts only; never checks out PR code
     types: [opened, reopened, synchronize, ready_for_review, edited, closed]
   issue_comment:
