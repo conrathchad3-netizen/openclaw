@@ -1,9 +1,9 @@
-name: OpenClaw Stable Main Closeout
+name: OpenClaw Stable Main Closeout.yml
 
-on:
-  push:
+on:openclaw
+  push:workflows
     branches: [main]
-    paths:
+    paths:.yml
       - "package.json"
       - "CHANGELOG.md"
       - "CHANGELOG/**"
