@@ -1,0 +1,90 @@
+<!--
+Optional linked context:
+Add a visible `Closes #<issue-number>` or `Related: #<issue-number>` line
+below this comment.
+
+Write for someone who uses or operates ClawSweeper but has not read the code.
+The title and opening problem statement should make sense without the diff or
+linked issue.
+
+Required PR title:
+type: <what changes for the person affected>
+Types: feat, fix, improve, refactor, docs, chore.
+Use a parenthesized scope only when it helps that reader.
+
+Name the affected task and the symptom or outcome, not the implementation:
+Good: fix: keep locked issues from stopping an apply run
+Bad: fix(apply): catch terminal locked-comment 403 errors
+Good: docs: help contributors provide proof for a pull request
+Bad: docs: expand CONTRIBUTING.md instructions
+
+For internal-only work, name the actual developer or operator workflow affected.
+
+**MUST:** Keep **Allow edits from maintainers** enabled for this PR so maintainers
+can help update the branch when needed.
+-->
+
+## What Problem This Solves
+
+<!--
+Describe the concrete user, product, or operational problem.
+In 1–3 plain sentences, say who is affected, what happens today, and why it
+matters to them. For a bug, name the trigger if known. For a feature or internal
+work, describe the need in the actual workflow without inventing harm.
+Could a reader understand the problem without knowing your proposed fix?
+
+Good: "Background checks can use up a new user's model allowance before they've
+asked the assistant to monitor anything."
+Bad: "Turn off periodic checks on fresh installs."
+-->
+
+## User Impact
+
+<!--
+"User impact: <what users, operators, or developers can now do or expect>."
+Lead with the concrete outcome in plain language, usually one sentence.
+For internal-only changes, say there is no user-visible change; do not invent a benefit.
+Keep important risks, breaking changes, migrations, and required user actions visible here.
+-->
+
+## Why This Change Was Made
+
+<!--
+Briefly explain how the change addresses the problem without repeating the impact.
+Keep the body short. Leave file lists, internal acronyms, and root-cause walkthroughs
+in the diff or optional <details>; include technical detail only when it explains
+behavior or a material tradeoff. Do not hide risks or required actions in <details>.
+-->
+
+## Documentation Impact
+
+<!--
+For every code, configuration, workflow, API, UI, package, policy, or integration
+change, name the canonical documentation reviewed and summarize any required
+updates. If no documentation changes are needed, explain why the existing
+contract remains accurate.
+
+For new or changed documentation, also classify it as active, proposed,
+compatibility-only, or historical. Active runbooks and volatile references must
+name their role owner, source of truth, verified scope/revision, and update
+triggers. See CONTRIBUTING.md.
+-->
+
+## Evidence
+
+<!--
+Show the most useful proof that this change works. Screenshots, screencasts,
+terminal output, focused tests, CI results, live observations, redacted logs,
+and artifact links are all useful. Include before/after evidence for visual
+changes when it clarifies the result.
+
+Start with the behavior checked and the result in plain language. Reviewers will
+inspect the code, tests, and CI; do not make them decode command lists to learn
+what was verified. Put exact commands, commit hashes, and long output in links
+or optional <details>. Keep the useful evidence summary and meaningful gaps visible.
+
+For code-bearing changes, include the current `## Real Behavior Proof` package
+described in [CONTRIBUTING.md](../CONTRIBUTING.md). After review feedback, update
+this main PR body and request a re-review only after the branch, proof, and body
+are current.
+-->
